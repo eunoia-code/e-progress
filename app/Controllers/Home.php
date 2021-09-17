@@ -2,55 +2,59 @@
 
 namespace App\Controllers;
 
+use App\Models\Progress_model;
+
 class Home extends BaseController
 {
-    public function index()
-    {
-        $data = [
-          'title' => 'E-Progres | Dashboard',
-          'slug' => 'dashboard'
-        ];
+  public function index()
+  {
+    $data = [
+      'title' => 'E-Progres | Dashboard',
+      'slug' => 'dashboard'
+    ];
 
-        return view('dashboard', $data);
-    }
+    return view('dashboard', $data);
+  }
 
-    public function progress()
-    {
-        $data = [
-          'title' => 'E-Progres | Progress',
-          'slug' => 'progress'
-        ];
+  public function progress()
+  {
+    $model = new Progress_model();
+    $data = [
+      'title' => 'E-Progres | Progress',
+      'slug' => 'progress',
+      'data' => $model->getProject()
+    ];
 
-        return view('progress', $data);
-    }
+    return view('progress', $data);
+  }
 
-    public function progress_add()
-    {
-        $data = [
-          'title' => 'E-Progres | Tambah Data',
-          'slug' => 'progress'
-        ];
+  public function progress_add()
+  {
+    $data = [
+      'title' => 'E-Progres | Tambah Data',
+      'slug' => 'progress'
+    ];
 
-        return view('progress_add', $data);
-    }
+    return view('progress_add', $data);
+  }
 
-    public function progress_edit()
-    {
-        $data = [
-          'title' => 'E-Progres | Edit Data',
-          'slug' => 'progress'
-        ];
+  public function progress_edit()
+  {
+    $data = [
+      'title' => 'E-Progres | Edit Data',
+      'slug' => 'progress'
+    ];
 
-        return view('progress_edit', $data);
-    }
+    return view('progress_edit', $data);
+  }
 
-    public function progress_detail()
-    {
-        $data = [
-          'title' => 'E-Progres | Lihat Data',
-          'slug' => 'progress'
-        ];
+  public function progress_detail()
+  {
+    $data = [
+      'title' => 'E-Progres | Lihat Data',
+      'slug' => 'progress'
+    ];
 
-        return view('progress_detail', $data);
-    }
+    return view('progress_detail', $data);
+  }
 }

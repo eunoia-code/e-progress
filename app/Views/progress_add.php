@@ -35,31 +35,54 @@
             </div>
           </div>
           <div class="card-body">
+
             <div class="form-group">
-              <label for="inputName">Project Name</label>
-              <input type="text" id="inputName" class="form-control">
+              <label for="inputName">PIC</label>
+              <input type="text" id="pic" name="pic" class="form-control">
             </div>
+
+            <div class="form-group">
+              <label for="inputName">Nama Projek</label>
+              <input type="text" id="project" name="project" class="form-control">
+            </div>
+
             <div class="form-group">
               <label for="inputDescription">Project Description</label>
-              <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+              <textarea id="inputDescription" class="form-control" rows="3"></textarea>
             </div>
+
             <div class="form-group">
-              <label for="inputStatus">Status</label>
-              <select id="inputStatus" class="form-control custom-select">
-                <option selected disabled>Select one</option>
-                <option>On Hold</option>
-                <option>Canceled</option>
-                <option>Success</option>
+              <label for="inputName">Durasi</label>
+              <input type="text" id="durasi" name="durasi" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="inputName">Periode</label>
+              <input type="text" id="periode" name="periode" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="inputStatus">Progress</label>
+              <select id="status" name="project_progress" class="form-control custom-select">
+                <option value="0"> 0% </option>
+                <option value="25">25%</option>
+                <option value="50">50%</option>
+                <option value="75">75%</option>
+                <option value="100">100%</option>
               </select>
             </div>
+
+
             <div class="form-group">
-              <label for="inputClientCompany">Client Company</label>
-              <input type="text" id="inputClientCompany" class="form-control">
+              <label for="inputStatus">Status</label>
+              <select id="status" name="status" class="form-control custom-select">
+                <option selected disabled>-Pilih Status-</option>
+                <option value="Sedang Berjalan"> Sedang Berjalan </option>
+                <option value="Batal">Batal</option>
+                <option value="Sukses">Sukses</option>
+              </select>
             </div>
-            <div class="form-group">
-              <label for="inputProjectLeader">Project Leader</label>
-              <input type="text" id="inputProjectLeader" class="form-control">
-            </div>
+
           </div>
           <!-- /.card-body -->
         </div>
@@ -68,7 +91,7 @@
       <div class="col-md-6">
         <div class="card card-secondary">
           <div class="card-header">
-            <h3 class="card-title">Budget</h3>
+            <h3 class="card-title">Tambahan</h3>
 
             <div class="card-tools">
               <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -77,18 +100,37 @@
             </div>
           </div>
           <div class="card-body">
+
             <div class="form-group">
-              <label for="inputEstimatedBudget">Estimated budget</label>
-              <input type="number" id="inputEstimatedBudget" class="form-control">
+              <label for="input">Tanggal SIT</label>
+              <input type="date" id="tgl_sit" name="tgl_sit" class="form-control">
             </div>
+
             <div class="form-group">
-              <label for="inputSpentBudget">Total amount spent</label>
-              <input type="number" id="inputSpentBudget" class="form-control">
+              <label for="input">Tanggal UAT</label>
+              <input type="date" id="tgl_uat" name="tgl_uat" class="form-control">
             </div>
+
             <div class="form-group">
-              <label for="inputEstimatedDuration">Estimated project duration</label>
-              <input type="number" id="inputEstimatedDuration" class="form-control">
+              <label for="input">Tanggal TO</label>
+              <input type="date" id="tgl_to" name="tgl_to" class="form-control">
             </div>
+
+            <div class="form-group">
+              <label for="input">Dokumen Pendukung</label>
+              <input type="text" id="dokumen_pendukung" name="dokumen_pendukung" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="input">OS</label>
+              <input type="text" id="os" name="os" class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label for="input">Message H2H</label>
+              <input type="text" id="message_h2h" name="message_h2h" class="form-control">
+            </div>
+
           </div>
           <!-- /.card-body -->
         </div>
@@ -97,7 +139,7 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <a href="#" class="btn btn-secondary">Cancel</a>
+        <a href="/Home/Progress/" class="btn btn-secondary">Cancel</a>
         <input type="submit" value="Create new Porject" class="btn btn-success float-right">
       </div>
     </div>
