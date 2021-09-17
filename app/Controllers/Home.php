@@ -8,9 +8,15 @@ class Home extends BaseController
 {
   public function index()
   {
+    $model = new Progress_model();
+
     $data = [
       'title' => 'E-Progres | Dashboard',
-      'slug' => 'dashboard'
+      'slug' => 'dashboard',
+      'total_project' => $model->countProject(),
+      'ongoing_project' => $model->countOngoingProject(),
+      'completed_project' => $model->countCompletedProject(),
+      'terminated_project' => $model->countTerminatedProject()
     ];
 
     return view('dashboard', $data);

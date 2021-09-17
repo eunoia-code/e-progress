@@ -24,4 +24,28 @@ class Progress_model extends Model
         $query = $this->db->table($this->table)->insert($data);
         return $query;
     }
+
+    public function countProject()
+    {
+        $query = $this->db->table($this->table)->countAllResults();
+        return $query;
+    }
+
+    public function countOngoingProject()
+    {
+        $query = $this->db->table($this->table)->where('status', 0)->countAllResults();
+        return $query;
+    }
+
+    public function countCompletedProject()
+    {
+        $query = $this->db->table($this->table)->where('status', 1)->countAllResults();
+        return $query;
+    }
+
+    public function countTerminatedProject()
+    {
+        $query = $this->db->table($this->table)->where('status', 2)->countAllResults();
+        return $query;
+    }
 }
