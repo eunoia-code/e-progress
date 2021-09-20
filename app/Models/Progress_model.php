@@ -25,6 +25,18 @@ class Progress_model extends Model
         return $query;
     }
 
+    public function updateProject($data, $id)
+    {
+        $query = $this->db->table($this->table)->update($data, array($this->primaryKey => $id));
+        return $query;
+    }
+
+    public function deleteProject($id)
+    {
+        $query = $this->db->table($this->table)->delete(array($this->primaryKey => $id));
+        return $query;
+    }
+
     public function countProject()
     {
         $query = $this->db->table($this->table)->countAllResults();

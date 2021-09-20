@@ -24,12 +24,24 @@
     <!-- Main content -->
     <section class="content">
 
-        <!-- <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Gagal </strong> You should check in on some of those fields below.
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div> -->
+        <?php if (session()->getFlashdata('sukses')) { ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Sukses </strong> <?= session()->getFlashdata('sukses'); ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <?php } ?>
+
+        <?php if (session()->getFlashdata('gagal')) { ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Gagal </strong> <?= session()->getFlashdata('gagal'); ?>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <?php } ?>
+
 
         <!-- Default box -->
         <div class="card">
@@ -38,8 +50,8 @@
 
                 <div class="card-tools">
 
-                    <a class="btn btn-light" href="/Home/Progress_add/" role="button">
-                        <i class="fas fa-plus"></i> Create
+                    <a class="btn btn-primary" href="/Home/Progress_add/" role="button">
+                        <i class="fas fa-plus"></i> Tambah Data
                     </a>
                 </div>
             </div>
@@ -51,18 +63,19 @@
                                 #
                             </th>
                             <th style="width: 20%">
-                                Project
+                                Nama Projek
                             </th>
                             <th style="width: 30%">
                                 Periode
                             </th>
                             <th>
-                                Project Progress
+                                Progress
                             </th>
                             <th style="width: 8%" class="text-center">
                                 Status
                             </th>
                             <th style="width: 20%">
+                              Aksi
                             </th>
                         </tr>
                     </thead>
@@ -80,7 +93,7 @@
                                         <?= $row['project']; ?>
                                     </a>
                                     <br />
-                                    <small> Created
+                                    <small> Dibuat
                                         <?php
                                         $tgl = date_create($row['time_stamp']);
                                         echo date_format($tgl, "d-m-Y");
@@ -104,32 +117,30 @@
 
                                 <td class="project-state">
                                     <?php
-                                    if ($row['status'] == 'Selesai') {
-                                        echo '<span class="badge badge-success">Success</span>';
-                                    } else if ($row['status'] == 'Sedang Berjalan') {
-                                        echo '<span class="badge badge-info">Sedang Berjalan</span>';
-                                    } else if ($row['status'] == 'Gagal') {
-                                        echo '<span class="badge badge-danger">Gagal</span>';
+                                    if ($row['status'] == '0') {
+                                        echo '<span class="badge badge-info p-2">Project Berjalan</span>';
+                                    } else if ($row['status'] == '1') {
+                                        echo '<span class="badge badge-success p-2">Success</span>';
+                                    } else if ($row['status'] == '2') {
+                                        echo '<span class="badge badge-danger p-2">Dibatalkan</span>';
                                     }
                                     ?>
                                 </td>
 
                                 <td class="project-actions text-right">
                                     <a class="btn btn-primary btn-sm" href="/Home/Progress_detail/<?= $row['id_project']; ?>">
-                                        <i class="fas fa-folder">
+                                        <i class="fas fa-eye">
                                         </i>
-                                        View
+                                        Lihat
                                     </a>
                                     <a class="btn btn-info btn-sm" href="/Home/Progress_edit/<?= $row['id_project']; ?>">
                                         <i class="fas fa-pencil-alt">
                                         </i>
-                                        Edit
+                                        Ubah
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
-                                        <i class="fas fa-trash">
-                                        </i>
-                                        Delete
-                                    </a>
+
+                                    <button type="button" onclick="initHapus('<?= base_url('/Home/delete/' . $row['id_project']) ?>')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
+
                                 </td>
                             </tr>
 
@@ -148,4 +159,23 @@
     <!-- /.content -->
 </div>
 <!-- /.content-wrapper -->
+
+<script type="text/javascript">
+    function initHapus(url, pesan = 'Data') {
+        Swal.fire({
+            title: `Hapus ${pesan}?`,
+            text: `${pesan} yang terhapus tidak dapat dikembalikan.`,
+            icon: "warning",
+            showCancelButton: !0,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Ya, Hapus",
+            cancelButtonText: "Batal",
+        }).then(function(t) {
+            if (t.value) {
+                document.location = url;
+            }
+        })
+    }
+</script>
 <?= $this->endSection(); ?>

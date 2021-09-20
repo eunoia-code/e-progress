@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="<?= base_url('assets') ?>/dist/css/adminlte.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Sweet Alert -->
+  <link rel="stylesheet" href="<?= base_url('assets') ?>/plugins/sweetalert2/sweetalert2.min.css">
 </head>
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini overflow-x-hidden">
 <!-- Site wrapper -->
 <div class="wrapper">
   <!-- Navbar -->
@@ -55,6 +57,7 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+          <li class="nav-header">MENU</li>
           <li class="nav-item">
             <a href="<?= base_url('Home') ?>" class="nav-link <?= $slug=='dashboard' ? 'active' : ''; ?>">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -101,6 +104,8 @@
 <script src="<?= base_url('assets') ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?= base_url('assets') ?>/dist/js/adminlte.min.js"></script>
+<!-- Sweet Alert -->
+<script src="<?= base_url('assets') ?>/plugins/sweetalert2/sweetalert2.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <!-- <script src="<?= base_url('assets') ?>/dist/js/demo.js"></script> -->
 </body>

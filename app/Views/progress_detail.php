@@ -2,178 +2,158 @@
 
 <?= $this->section('content'); ?>
 <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Project Detail</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Project Detail</li>
-            </ol>
-          </div>
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>Project Detail</h1>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
-
-      <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Projects Detail</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Project Detail</li>
+          </ol>
         </div>
-        <div class="card-body">
-          <div class="row">
-            <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
-              <div class="row">
-                <div class="col-12 col-sm-4">
-                  <div class="info-box bg-light">
-                    <div class="info-box-content">
-                      <span class="info-box-text text-center text-muted">Estimated budget</span>
-                      <span class="info-box-number text-center text-muted mb-0">2300</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-4">
-                  <div class="info-box bg-light">
-                    <div class="info-box-content">
-                      <span class="info-box-text text-center text-muted">Total amount spent</span>
-                      <span class="info-box-number text-center text-muted mb-0">2000</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-12 col-sm-4">
-                  <div class="info-box bg-light">
-                    <div class="info-box-content">
-                      <span class="info-box-text text-center text-muted">Estimated project duration</span>
-                      <span class="info-box-number text-center text-muted mb-0">20</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <h4>Recent Activity</h4>
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="<?= base_url('assets') ?>/dist/img/user1-128x128.jpg" alt="user image">
-                        <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
-                        </span>
-                        <span class="description">Shared publicly - 7:45 PM today</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore.
-                      </p>
-
-                      <p>
-                        <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v2</a>
-                      </p>
-                    </div>
-
-                    <div class="post clearfix">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="<?= base_url('assets') ?>/dist/img/user7-128x128.jpg" alt="User Image">
-                        <span class="username">
-                          <a href="#">Sarah Ross</a>
-                        </span>
-                        <span class="description">Sent you a message - 3 days ago</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore.
-                      </p>
-                      <p>
-                        <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 2</a>
-                      </p>
-                    </div>
-
-                    <div class="post">
-                      <div class="user-block">
-                        <img class="img-circle img-bordered-sm" src="<?= base_url('assets') ?>/dist/img/user1-128x128.jpg" alt="user image">
-                        <span class="username">
-                          <a href="#">Jonathan Burke Jr.</a>
-                        </span>
-                        <span class="description">Shared publicly - 5 days ago</span>
-                      </div>
-                      <!-- /.user-block -->
-                      <p>
-                        Lorem ipsum represents a long-held tradition for designers,
-                        typographers and the like. Some people hate it and argue for
-                        its demise, but others ignore.
-                      </p>
-
-                      <p>
-                        <a href="#" class="link-black text-sm"><i class="fas fa-link mr-1"></i> Demo File 1 v1</a>
-                      </p>
-                    </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-12 col-lg-4 order-1 order-md-2">
-              <h3 class="text-primary"><i class="fas fa-paint-brush"></i> AdminLTE v3</h3>
-              <p class="text-muted">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
-              <br>
-              <div class="text-muted">
-                <p class="text-sm">Client Company
-                  <b class="d-block">Deveint Inc</b>
-                </p>
-                <p class="text-sm">Project Leader
-                  <b class="d-block">Tony Chicken</b>
-                </p>
-              </div>
-
-              <h5 class="mt-5 text-muted">Project files</h5>
-              <ul class="list-unstyled">
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Functional-requirements.docx</a>
-                </li>
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-pdf"></i> UAT.pdf</a>
-                </li>
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-envelope"></i> Email-from-flatbal.mln</a>
-                </li>
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-image "></i> Logo.png</a>
-                </li>
-                <li>
-                  <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Contract-10_12_2014.docx</a>
-                </li>
-              </ul>
-              <div class="text-center mt-5 mb-3">
-                <a href="#" class="btn btn-sm btn-primary">Add files</a>
-                <a href="#" class="btn btn-sm btn-warning">Report contact</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /.card-body -->
       </div>
-      <!-- /.card -->
+    </div><!-- /.container-fluid -->
+  </section>
 
-    </section>
+  <div class="container-fluid">
+    <!-- Main content -->
+      <section class="content">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title">Umum</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+
+                <div class="form-group">
+                  <label for="inputName">PIC</label>
+                  <input type="hidden" id="id_project" name="id_project" value="<?= $data->id_project ?>" readonly>
+                  <input type="text" id="pic" name="pic" class="form-control" value="<?= $data->pic ?>" required readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputName">Nama Project</label>
+                  <input type="text" id="project" name="project" class="form-control" value="<?= $data->project ?>" required readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputDescription">Deskripsi Project</label>
+                  <textarea id="desc_project" name="desc_project" class="form-control" rows="3" required readonly><?= $data->desc_project ?></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputName">Durasi</label>
+                  <input type="text" id="durasi" name="durasi" class="form-control" value="<?= $data->durasi ?>" required readonly>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="inputName">Periode</label>
+                  <input type="text" id="periode" name="periode" class="form-control" value="<?= $data->periode ?>" required readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="inputStatus">Progress</label>
+                  <select id="project_progress" name="project_progress" class="form-control custom-select" required readonly>
+
+                    <option value="0"> 0% </option>
+                    <option value="25">25%</option>
+                    <option value="50">50%</option>
+                    <option value="75">75%</option>
+                    <option value="100">100%</option>
+                  </select>
+                </div>
+
+
+                <div class="form-group">
+                  <label for="inputStatus">Status</label>
+                  <select id="status" name="status" class="form-control custom-select" required readonly>
+                    <option selected disabled>-Pilih Status-</option>
+                    <option value="0">Project Berjalan</option>
+                    <option value="1">Selesai</option>
+                    <option value="2">Dibatalkan</option>
+                  </select>
+                </div>
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <div class="col-md-6">
+            <div class="card card-secondary">
+              <div class="card-header">
+                <h3 class="card-title">Tambahan</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+
+                <div class="form-group">
+                  <label for="input">Tanggal SIT</label>
+                  <input type="date" id="tgl_sit" name="tgl_sit" class="form-control" value="<?= $data->tgl_sit ?>" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="input">Tanggal UAT</label>
+                  <input type="date" id="tgl_uat" name="tgl_uat" class="form-control" value="<?= $data->tgl_uat ?>" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="input">Tanggal TO</label>
+                  <input type="date" id="tgl_to" name="tgl_to" class="form-control" value="<?= $data->tgl_to ?>" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="input">Dokumen Pendukung</label>
+                  <input type="text" id="dokumen_pendukung" name="dokumen_pendukung" class="form-control" value="<?= $data->dokumen_pendukung ?>" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="input">OS</label>
+                  <input type="text" id="os" name="os" class="form-control" value="<?= $data->os ?>" readonly>
+                </div>
+
+                <div class="form-group">
+                  <label for="input">Message H2H</label>
+                  <input type="text" id="message_h2h" name="message_h2h" class="form-control" value="<?= $data->message_h2h ?>" readonly>
+                </div>
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12" style="margin-bottom:8px">
+            <a href="/Home/Progress/" class="btn btn-secondary">Kembali</a>
+          </div>
+        </div>
+      </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-  <?= $this->endSection(); ?>
+</div>
+
+<script type="text/javascript">
+  document.getElementById("project_progress").value = <?= $data->project_progress ?>;
+  document.getElementById("status").value = <?= $data->status ?>;
+</script>
+<!-- /.content-wrapper -->
+<?= $this->endSection(); ?>
