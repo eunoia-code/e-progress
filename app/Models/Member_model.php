@@ -4,13 +4,13 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Progress_model extends Model
+class Member_model extends Model
 {
-    protected $table = "tb_project";
-    protected $primaryKey = 'id_project';
+    protected $table = "tb_member";
+    protected $primaryKey = 'id_member';
 
 
-    public function getProject($id = false)
+    public function getMember($id = false)
     {
         if ($id === false) {
             return $this->findAll();
@@ -19,43 +19,43 @@ class Progress_model extends Model
         }
     }
 
-    public function addProject($data)
+    public function addMember($data)
     {
         $this->db->table($this->table)->insert($data);
         return $this->db->insertID();
     }
 
-    public function updateProject($data, $id)
+    public function updateMember($data, $id)
     {
         $query = $this->db->table($this->table)->update($data, array($this->primaryKey => $id));
         return $query;
     }
 
-    public function deleteProject($id)
+    public function deleteMember($id)
     {
         $query = $this->db->table($this->table)->delete(array($this->primaryKey => $id));
         return $query;
     }
 
-    public function countProject()
+    public function countMember()
     {
         $query = $this->db->table($this->table)->countAllResults();
         return $query;
     }
 
-    public function countOngoingProject()
+    public function countOngoingMember()
     {
         $query = $this->db->table($this->table)->where('status', 0)->countAllResults();
         return $query;
     }
 
-    public function countCompletedProject()
+    public function countCompletedMember()
     {
         $query = $this->db->table($this->table)->where('status', 1)->countAllResults();
         return $query;
     }
 
-    public function countTerminatedProject()
+    public function countTerminatedMember()
     {
         $query = $this->db->table($this->table)->where('status', 2)->countAllResults();
         return $query;

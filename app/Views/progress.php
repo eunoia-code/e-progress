@@ -55,27 +55,27 @@
                     </a>
                 </div>
             </div>
-            <div class="card-body p-0">
-                <table class="table table-striped projects">
+            <div class="card-body p-0 m-2">
+                <table class="table table-striped projects" id="table_progress">
                     <thead>
-                        <tr>
+                        <tr align="center">
                             <th style="width: 1%">
                                 #
                             </th>
                             <th style="width: 20%">
                                 Nama Projek
                             </th>
-                            <th style="width: 30%">
+                            <th style="width: 20%">
                                 Periode
                             </th>
                             <th>
                                 Progress
                             </th>
-                            <th style="width: 8%" class="text-center">
+                            <th style="width: 10%" class="text-center">
                                 Status
                             </th>
-                            <th style="width: 20%">
-                              Aksi
+                            <th style="width: 25%">
+                                Aksi
                             </th>
                         </tr>
                     </thead>
@@ -130,15 +130,12 @@
                                 <td class="project-actions text-right">
                                     <a class="btn btn-primary btn-sm" href="/Home/Progress_detail/<?= $row['id_project']; ?>">
                                         <i class="fas fa-eye">
-                                        </i>
-                                        Lihat
+                                        </i>Lihat
                                     </a>
                                     <a class="btn btn-info btn-sm" href="/Home/Progress_edit/<?= $row['id_project']; ?>">
                                         <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Ubah
+                                        </i>Ubah
                                     </a>
-
                                     <button type="button" onclick="initHapus('<?= base_url('/Home/delete/' . $row['id_project']) ?>')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button>
 
                                 </td>
@@ -158,24 +155,18 @@
     </section>
     <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
 
-<script type="text/javascript">
-    function initHapus(url, pesan = 'Data') {
-        Swal.fire({
-            title: `Hapus ${pesan}?`,
-            text: `${pesan} yang terhapus tidak dapat dikembalikan.`,
-            icon: "warning",
-            showCancelButton: !0,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Ya, Hapus",
-            cancelButtonText: "Batal",
-        }).then(function(t) {
-            if (t.value) {
-                document.location = url;
+<script>
+    $(document).ready(function() { //Error happens here, $ is not defined.
+
+        $('#table_progress').DataTable({
+            ordering: true,
+            language: {
+                search: "_INPUT_",
+                searchPlaceholder: "Cari Progress",
             }
-        })
-    }
+        });
+    });
 </script>
+<!-- /.content-wrapper -->
 <?= $this->endSection(); ?>

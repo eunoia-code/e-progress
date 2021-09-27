@@ -22,7 +22,7 @@
 
   <div class="container-fluid">
     <!-- Main content -->
-    <form action="/Home/Create" method="post">
+    <form action="/Home/Create" enctype="multipart/form-data" method="post">
       <section class="content">
         <div class="row">
           <div class="col-md-6">
@@ -119,10 +119,12 @@
                   <input type="date" id="tgl_to" name="tgl_to" class="form-control">
                 </div>
 
+
                 <div class="form-group">
-                  <label for="input">Dokumen Pendukung</label>
-                  <input type="text" id="dokumen_pendukung" name="dokumen_pendukung" class="form-control">
+                  <label for="" class="mr-4">Dokumen Pendukung</label>
+                  <input type="file" name="file_upload[]" multiple>
                 </div>
+
 
                 <div class="form-group">
                   <label for="input">OS</label>

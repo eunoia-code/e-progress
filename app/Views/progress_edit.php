@@ -22,7 +22,7 @@
 
   <div class="container-fluid">
     <!-- Main content -->
-    <form action="/Home/Update" method="post">
+    <form action="/Home/Update" method="post" enctype="multipart/form-data">
       <section class="content">
         <div class="row">
           <div class="col-md-6">
@@ -122,8 +122,8 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="input">Dokumen Pendukung</label>
-                  <input type="text" id="dokumen_pendukung" name="dokumen_pendukung" class="form-control" value="<?= $data->dokumen_pendukung ?>">
+                  <label for="">Dokumen Pendukung</label>
+                  <input type="file" name="file_upload[]" multiple>
                 </div>
 
                 <div class="form-group">
@@ -140,6 +140,50 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
+
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">Files</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body p-0">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>File Name</th>
+                      <th>File Size</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <?php foreach ($files as $file) : ?>
+                      <tr>
+                        <td><?= $file->nama_file ?></td>
+                        <td><?= $file->size ?> Mb</td>
+                        <td class="text-right py-0 align-middle">
+                          <div class="btn-group btn-group-sm">
+                            <a href="<?= base_url('uploads/' . $file->file) ?>" class="btn btn-info" target="_blank"><i class="fas fa-eye"></i></a>
+                            <button type="button" onclick="initHapus('<?= base_url('/Home/delete_file/' . $file->id_file) ?>')" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
+
+                          </div>
+                        </td>
+                      </tr>
+                    <?php endforeach; ?>
+
+
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+
           </div>
         </div>
         <div class="row">
